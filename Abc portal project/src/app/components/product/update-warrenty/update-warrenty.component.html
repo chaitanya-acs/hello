@@ -1,0 +1,33 @@
+<div class='emp'>
+    <h3 style="text-align:center"> Update Warranty</h3>
+    <div>
+    <table class='table' >
+        <tr>
+            <td>Model Number</td>
+            <td><input type='text' ngModel #tempModNo='ngModel' class='form-control' [(ngModel)]='modelNo' required pattern='[A-Za-z ]*' ></td>
+        </tr>
+        
+        <div *ngIf='tempModNo.touched && tempModNo.invalid' class='alert alert-danger'>
+            please enter model number
+        </div>
+        <tr>
+            <td>Warranty Years</td>
+            <td><input type="number" ngModel #tempYear='ngModel' class='form-control' [(ngModel)]='year' required></td>
+        </tr>
+        <p  *ngIf='tempYear.touched && tempYear.invalid' class='alert alert-danger'>
+            please enter model number
+        </p>
+      
+    </table>
+    <button (click)='update()' class='btn btn-success btn-block'>Update</button>
+
+    </div>
+  
+        
+    <!-- Below message to be clicked to navigate back to emp-list component -->
+    <div *ngIf='message != null' [ngClass]='msgClass'>
+        {{message}}
+    </div>
+
+   
+</div> 

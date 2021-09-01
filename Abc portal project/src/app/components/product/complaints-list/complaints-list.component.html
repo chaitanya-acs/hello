@@ -1,0 +1,44 @@
+<p></p>
+<div style="background-color: lightgray;">
+  <p class="abc">
+    <b style="color: rgb(11, 15, 230);">ChooseCategory</b>  &nbsp;
+    <select style="background-color: rgb(70, 68, 68);color: white;" [(ngModel)]="prodCat"   (click)='complaintList()' >
+      <option [ngValue]="null" [selected] ="prodCat==null" disabled >Select Category</option>
+
+  <option  *ngFor="let p of productCategoryName" [ngValue]="p">{{p}}</option>
+</select>
+</p>
+<input class="search" type="text"  placeholder="Search..." [(ngModel)]="filterTerm">   
+</div>
+<p style="text-align: center; background-color: rgb(154, 186, 216);  font-size:30px;">COMPLAINT TABLE</p>
+<div class='maindiv'>
+  <table class="styled-table" *ngIf='message==null'>
+    <thead>
+      <tr >
+          <th>COMPLAINT ID</th>
+          <th>COMPLAINT NAME</th>
+          <th>PRODUCT MODEL NUMBER</th>
+          <th>STATUS</th>
+      </tr >
+    </thead> 
+    
+      <tbody >
+      <tr class="active-row" *ngFor='let com of complaints | filter:filterTerm' >
+          <td>{{com.complaintId}}</td>
+          <td>{{com.complaintName}}</td>
+          <td>{{com.productModelNumber}}</td>
+          <td>{{com.status}}</td>
+      
+      </tr>
+      </tbody>
+
+  </table>
+
+ 
+  <p class='msg' *ngIf='message != null'>  
+    {{message}}!! &nbsp; Click close to refresh
+    <br>
+     <button type="button"  class='msg1'  (click)='refreshPage()'>Close</button>
+</p>
+
+</div>
