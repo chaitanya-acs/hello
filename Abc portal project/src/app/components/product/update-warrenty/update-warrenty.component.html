@@ -1,32 +1,50 @@
 <div class='emp'>
-    <h3 style="text-align:center"> Update Warranty</h3>
-    <div>
+    <p style="text-align:center; font-size: 25px;color: white;"> Update Product Warranty</p>
+    <div style="background-color: rgb(241, 241, 241);">
     <table class='table' >
-        <tr>
-            <td>Model Number</td>
-            <td><input type='text' ngModel #tempModNo='ngModel' class='form-control' [(ngModel)]='modelNo' required pattern='[A-Za-z ]*' ></td>
-        </tr>
-        
-        <div *ngIf='tempModNo.touched && tempModNo.invalid' class='alert alert-danger'>
-            please enter model number
+         <tr>
+            <td><b>Model Number</b></td>
+            <td><input type='text' ngModel #tname='ngModel' class='form-control' [(ngModel)]='modelNo' required pattern="[A-Z]{4}[0-9]{4}">
+         
+        <div *ngIf='tname.touched && tname.invalid'>
+            <p *ngIf='tname.errors.required' class='alert alert-danger'>
+                Please enter model number
+            </p>
+           
+            <p *ngIf='tname.errors.pattern' class='alert alert-danger'>
+               please enter correct format like UYUY9876   
+            </p>
         </div>
+    </td>
+</tr>
         <tr>
-            <td>Warranty Years</td>
-            <td><input type="number" ngModel #tempYear='ngModel' class='form-control' [(ngModel)]='year' required></td>
-        </tr>
-        <p  *ngIf='tempYear.touched && tempYear.invalid' class='alert alert-danger'>
-            please enter model number
-        </p>
+            <td><b>Warranty Years</b></td>
+            <td><input type="number"  ngModel #tyears='ngModel' class='form-control' [(ngModel)]='year' required >
+                <div *ngIf='tyears.touched && tyears.invalid'>
+         
+                    <div *ngIf='tyears.errors.required' class='alert alert-danger'>
+                        Please enter years
+                    </div>
+                   
+                </div>
+            </td>
+        </tr> 
+       
+        
+        
+
+       
       
     </table>
     <button (click)='update()' class='btn btn-success btn-block'>Update</button>
 
     </div>
+
   
         
-    <!-- Below message to be clicked to navigate back to emp-list component -->
+    
     <div *ngIf='message != null' [ngClass]='msgClass'>
-        {{message}}
+       <b>{{message}}</b> 
     </div>
 
    

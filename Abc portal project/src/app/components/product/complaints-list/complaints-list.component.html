@@ -25,7 +25,7 @@
       <tbody >
       <tr class="active-row" *ngFor='let com of complaints | filter:filterTerm' >
           <td>{{com.complaintId}}</td>
-          <td>{{com.complaintName}}</td>
+          <td>{{com.complaintName|titlecase}}</td>
           <td>{{com.productModelNumber}}</td>
           <td>{{com.status}}</td>
       
@@ -36,7 +36,7 @@
 
  
   <p class='msg' *ngIf='message != null'>  
-    {{message}}!! &nbsp; Click close to refresh
+    {{message}}!! &nbsp; Click close button
     <br>
      <button type="button"  class='msg1'  (click)='refreshPage()'>Close</button>
 </p>

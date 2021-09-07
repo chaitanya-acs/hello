@@ -23,7 +23,7 @@
       <tbody >
       <tr class="active-row" *ngFor='let eng of engineers | filter:filterTerm'>
         <td>{{eng.engineerId}}</td>
-          <td>{{eng.engineerName}}</td>
+          <td>{{eng.engineerName |titlecase}}</td>
           <td>{{eng.domain}}</td>
       
       </tr>
@@ -33,7 +33,7 @@
 
  
   <p class='msg' *ngIf='message != null'>  
-    {{message}}!! &nbsp; Click close to refresh
+    {{message}}!! &nbsp; Click close button
     <br>
      <button type="button"  class='msg1'  (click)='refreshPage()'>Close</button>
 </p>
