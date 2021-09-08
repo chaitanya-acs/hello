@@ -1,0 +1,18 @@
+<div>
+    <p class="category">
+        <b style="color: rgb(11, 15, 230);">ChooseCategory</b>  &nbsp;
+        <select style="background-color: rgb(70, 68, 68);color:white" [(ngModel)]="productCategory" >
+          <option [ngValue]="null" [selected] ="productCategory==null" disabled >Select Category</option>
+          <option  *ngFor="let product of productCategoryName" [ngValue]="product">{{product}}</option>
+        </select>
+      </p>
+<div>
+    <button type="button" class="alert alert-danger" (click)='removeProduct()'>Delete</button>
+</div>
+      <p [ngClass]='msgClass' *ngIf='messageOne != null'>  
+        {{messageOne}}!! &nbsp; Click close button
+        <br>
+         <button type="button"  class='msg'  (click)='refreshPage()'>Close</button>
+      </p>
+
+</div>

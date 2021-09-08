@@ -1,0 +1,48 @@
+<!-- div can be used with the class, lang, and title attributes to mark up semantics common to a group of consecutive elements. -->
+<!-- Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method -->
+<div class='updateProduct'>
+    <p style="text-align:center; font-size: 25px;color: white;"> Update Product Warranty</p>
+    <div style="background-color: rgb(241, 241, 241);">
+        <!-- The table element represents data with more than one dimension, in the form of a table. -->
+        <table class='table' >
+            <tr>    <!--The tr element represents a row of cells in a table. -->
+             <td><b>Model Number</b></td>  <!--The td element represents a data cell in a table. -->
+            <td><input type='text' ngModel #tname='ngModel' class='form-control' [(ngModel)]='modelNo' required pattern="[A-Z]{4}[0-9]{4}">
+          <!-- The input element represents a typed data field, usually with a form control to allow the user to edit the data. -->
+        <div *ngIf='tname.touched && tname.invalid'>
+            <p *ngIf='tname.errors.required' class='alert alert-danger'>
+                Please enter model number
+            </p>
+            <!-- The p element represents a paragraph -->
+            <p *ngIf='tname.errors.pattern' class='alert alert-danger'>
+               please enter correct format like UYUY9876   
+            </p>
+        </div>
+    </td>
+</tr>
+        <tr> 
+            <!-- The b element represents a span of text to which attention is being drawn for utilitarian purposes -->
+            <td><b>Warranty Years</b></td>
+            <td><input type="number"  ngModel #tyears='ngModel' class='form-control' [(ngModel)]='year' required >
+                <div *ngIf='tyears.touched && tyears.invalid'>
+                       <!-- ngIf is based on codition if it is true it will allow through it -->
+                    <div *ngIf='tyears.errors.required' class='alert alert-danger'>
+                        Please enter years
+                    </div>
+                   
+                </div>
+            </td>
+        </tr> 
+       
+     <!-- The button element represents a button labeled by its contents. -->
+     <!-- click is an event when button is clicked it will perform update method  -->
+    </table>
+    <button (click)='update()' class='btn btn-success btn-block'>Update</button>
+
+    </div>
+    <!-- It represents its children. It can be used with the class, lang, and title attributes to mark up 
+    semantics common to a group of consecutive elements. -->
+    <div *ngIf='message != null' [ngClass]='msgClass'>
+       <b>{{message}}</b> 
+    </div>
+</div> 

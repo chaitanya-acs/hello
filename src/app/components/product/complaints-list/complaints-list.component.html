@@ -1,0 +1,53 @@
+<p></p><!--  The p element represents a paragraph. -->
+<!-- The div element has no special meaning at all. It represents its children. -->
+<!-- Contains CSS styling declarations to be applied to the element. -->
+<div style="background-color: lightgray;">
+  <!-- class is a space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method -->
+  <p class="category">
+    <b style="color: rgb(11, 15, 230);">ChooseCategory</b>  &nbsp;
+    <select style="background-color: rgb(70, 68, 68);color:white" [(ngModel)]="productCategory"   (click)='complaintList()' >
+      <!-- The option element represents an option in a select element or as part of a list of suggestions in a datalist element. -->
+      <option [ngValue]="null" [selected] ="productCategory==null" disabled >Select Category</option>
+      <option  *ngFor="let product of productCategoryName" [ngValue]="product">{{product}}</option>
+    </select>
+  </p>
+  <!-- The input element represents a typed data field, usually with a form control to allow the user to edit the data. -->
+   <input class="search" type="text"  placeholder="Search..." [(ngModel)]="filterTerm">   
+</div>
+<p style="text-align: center; background-color: rgb(154, 186, 216);  font-size:30px;">COMPLAINT TABLE</p>
+<div class='maindiv'>
+  <!-- The table element represents data with more than one dimension, in the form of a table. -->
+  <table class="styled-table" *ngIf='message==null'>
+    <!-- The thead element represents the block of rows that consist of the column labels (headers) for the parent table element, 
+    if the thead element has a parent and it is a table. -->
+    <thead>
+      <!-- The tr element represents a row of cells in a table. -->
+      <tr >
+        <!-- The th element represents a header cell in a table. -->
+          <th>COMPLAINT ID</th>
+          <th>COMPLAINT NAME</th>
+          <th>PRODUCT MODEL NUMBER</th>
+          <th>STATUS</th>
+      </tr >
+    </thead> 
+    <!-- The tbody element represents a block of rows that consist of a body of data for the parent table element, 
+    if the tbody element has a parent and it is a table -->
+      <tbody >
+        <!-- A space-separated list of the classes of the element. -->
+      <tr class="active-row" *ngFor='let complaint of complaints | filter:filterTerm' >
+          <td>{{complaint.complaintId}}</td>
+          <td>{{complaint.complaintName|titlecase}}</td>
+          <td>{{complaint.productModelNumber}}</td>
+          <td>{{complaint.status}}</td>
+      </tr>
+      </tbody>
+  </table>
+
+  <p class='msg' *ngIf='message != null'>  
+    {{message}}!! Click close button
+    <br>
+    <!-- The button element represents a button labeled by its contents. -->
+    <button type="button"  class='msg1'  (click)='refreshPage()'>Close</button>
+  </p>
+
+</div>

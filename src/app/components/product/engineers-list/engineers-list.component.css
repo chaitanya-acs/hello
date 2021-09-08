@@ -1,0 +1,55 @@
+
+.styled-table {
+    border-collapse: collapse;
+   
+    margin:0px 480px ;
+    
+    font-family: sans-serif;
+    min-width:400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th {
+    padding: 15px 15px;
+    font-size: 13px;
+}
+.styled-table td{
+   
+    padding: 10px 15px;
+    font-size: 15px;
+text-align:left;
+
+
+}
+.msg{
+    margin: 5px 500px ;
+    color: rgb(236, 131, 89);
+    font-size: 20px;
+}
+.msg1{
+    margin: 10px 400px ;
+    background-color:hsl(0, 100%, 50%);
+    width: 80px;
+    
+}
+
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.search{
+margin :1cm 28cm;
+width: 7cm;
+}
+.productCategory{
+    margin: 5px 1cm;
+    
+
+}
+
+
+

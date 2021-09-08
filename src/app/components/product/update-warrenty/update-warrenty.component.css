@@ -1,0 +1,13 @@
+.updateProduct{
+    /* Shorthand property for setting border width, style, and color. */
+    border:2px solid rgb(95, 100, 97);
+    /* Defines the radii of the outer border edge. */
+    border-radius: 10px;
+    /* Shorthand property to set values the thickness of the margin area.  */
+    margin:90px 450px;
+    /* Specifies the width of the content area, padding area or border area (depending on 'box-sizing') of certain boxes. */
+    width:400px;
+    /* Sets the background color of an element. */
+    background-color:rgba(39, 36, 36, 0.685);
+    
+}
