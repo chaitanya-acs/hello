@@ -1,20 +1,26 @@
 
 .styled-table {
+    /* Selects a table's border model. */
     border-collapse: collapse;
-   
+ /* Shorthand property to set values the thickness of the margin area. */
     margin:0px 480px ;
-    
+ /* Specifies a prioritized list of font family names or generic family names. */
     font-family: sans-serif;
     min-width:400px;
+  /* Attaches one or more drop-shadows to the box.  */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .styled-table thead tr {
     background-color: #009879;
     color: #ffffff;
+  /* Describes how inline contents of a block are horizontally aligned 
+    if the contents do not completely fill the line box. */
     text-align: left;
 }
 .styled-table th {
+   /* Shorthand property to set values the thickness of the padding area. */
     padding: 15px 15px;
+ /* Indicates the desired height of glyphs from the font. */
     font-size: 13px;
 }
 .styled-table td{
@@ -27,18 +33,23 @@ text-align:left;
 }
 .msg{
     margin: 5px 500px ;
+   /* Sets the color of an element's text */
     color: rgb(236, 131, 89);
     font-size: 20px;
 }
 .msg1{
     margin: 10px 400px ;
+   /* Sets the background color of an element. */ 
     background-color:hsl(0, 100%, 50%);
+  /* Specifies the width of the content area,
+     padding area or border area (depending on 'box-sizing') of certain boxes. */  
     width: 80px;
     
 }
 
 
 .styled-table tbody tr:last-of-type {
+  /* Shorthand property for setting border width, style and color.   */
     border-bottom: 2px solid #009879;
 }
 .search{
